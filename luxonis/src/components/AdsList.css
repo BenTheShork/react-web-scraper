@@ -1,0 +1,117 @@
+/* src/components/AdsList.css */
+
+.ads-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ads-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ad-item {
+    width: calc(33.333% - 20px);
+    margin: 0 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.ad-item:hover {
+    border-color: #3498db;
+    transform: scale(1.05);
+}
+
+.ad-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ad-title {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 8px;
+    background-color: #3498db;
+    min-width: 30px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #ddd;
+    color: #666;
+    cursor: not-allowed;
+}
+
+button.active {
+    background-color: #2980b9;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+/* Additional styling for << and >> buttons */
+
+button.double-arrow {
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .ad-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-item {
+        width: 100%;
+    }
+}

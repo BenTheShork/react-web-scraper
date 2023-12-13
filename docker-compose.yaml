@@ -1,0 +1,32 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./luxonis/  
+    ports:
+      - "8080:3000" 
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./luxonis-backend/ 
+    ports:
+      - "3001:3001"  
+    depends_on:
+      - database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 007prosperanova
+      POSTGRES_DB: luxonisdb
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 007prosperanova
+      POSTGRES_DB: luxonisdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

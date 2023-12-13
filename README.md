@@ -1,0 +1,1 @@
+To run app, open console in folder with project and run command: 'docker-compose up'
